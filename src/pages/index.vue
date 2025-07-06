@@ -2,7 +2,13 @@
   <main class="home">
     <div class="home__container">
       <div class="home__list">
-        <HomeCard />
+        <HomeCard
+        v-for="(item) in newsList"
+        :key="item.id"
+        :title="item.title"
+        :description="item.description"
+        :id="item.id"
+        />
       </div>
     </div>
   </main>
@@ -10,9 +16,16 @@
 
 <script>
 import HomeCard from "@/components/home/HomeCard";
+import newsList from "@/json/news.json";
+
 export default {
-  name: "PageHome",
-  components: { HomeCard }
+  name: "AppHome",
+  components: { HomeCard },
+  data() {
+    return {
+      newsList: newsList
+    };
+  }
 };
 </script>
 <style lang="less">

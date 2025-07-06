@@ -1,47 +1,46 @@
 <template>
-  <div>
-    <PageHeader text="Live" />
-    <PageHome />
-  </div>
+  <div class="app">
+  <PageHeader class="app__header" />
+
+  <router-view class="app__layout" />
+</div>
 </template>
 
 <script>
-import PageHeader from '@/components/PageHeader';
-import PageHome from '@/components/PageHome';
+import PageHeader from "@/components/PageHeader";
 export default {
-  name: 'App',
   components: {
-    PageHeader,
-    PageHome,
+    PageHeader
   }
 }
 </script>
 
 <style lang="less">
-@import (reference) "./style/variables.less";
-@import (reference) "./style/mixins.less";
-
+@import (reference) "style/variables.less";
+@import (reference) "style/mixins.less";
 * {
- margin: 0;
- padding: 0;
+  margin: 0;
+  padding: 0;
 }
 body,
 html {
- font-size: 16px;
- font-family: @font2;
+  font-size: 16px;
+  font-family: @font2;
 }
+
 body {
- background-color: @light_gray;
+  background-color: @light_gray;
 }
+
 button {
- background-color: transparent;
- border: none;
- cursor: pointer;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 @keyframes flicker {
   from {
-   opacity: 1;
+    opacity: 1;
   }
   50% {
     opacity: 0;
@@ -50,6 +49,4 @@ button {
     opacity: 1;
   }
 }
-
-
 </style>
